@@ -4,7 +4,7 @@ Regex Tutorial
 
 ## Summary
 
-This is a general tutorial of regualr expression in JS (Regex). Regex is used to search through a string of text. It is more or less a set of instructions for the machine to fine selected groups of text from a larger string.
+This is a general tutorial of regular expression in JS (Regex). Regex is used to search through a string of text. It is more or less a set of instructions for the machine to fine selected groups of text from a larger string.
 
 ## Table of Contents
 
@@ -20,23 +20,23 @@ This is a general tutorial of regualr expression in JS (Regex). Regex is used to
 ## Regex Components
 
 ### Anchors
-^ (carrot): this enables you to match a chatracter at the beginning of the line. 
-    Example /^T/g would match only the first T of a string. It doesnt matter if there are multiple line brakes or multiple T's starting multiple sentences in a single string. It would only match the first T of the first sentence if there is one. If not, it wouldnt match anything in the entire string. /^T/m would enable you to match multiple 'T's in the string if in the case more than one line starts with a 'T'
+^ (carrot): this enables you to match a character at the beginning of the line. 
+    Example /^T/g would match only the first T of a string. It doesn’t matter if there are multiple line brakes or multiple T's starting multiple sentences in a single string. It would only match the first T of the first sentence if there is one. If not, it wouldn’t match anything in the entire string. /^T/m would enable you to match multiple 'T's in the string if in the case more than one line starts with a 'T'
 
 $ (dollar sign): this is something that we would use in order to match the last character of the string. 
     Example: /\.$/g would match the '.' at the end of a string. In the sentence, "This cat is cool." it would match the final. Even if there are multiple lines. If in the case you added multi line it would match every period at the end of every line. 
 
 \A	The match must occur at the beginning of the string only (no multiline support). 
-    Example /\AT/g would match only the first T of a string. It doesnt matter if there are multiple line brakes or multiple T's starting multiple sentences in a single string.
+    Example /\AT/g would match only the first T of a string. It doesn’t matter if there are multiple line brakes or multiple T's starting multiple sentences in a single string.
 
 
 \Z	The match must occur at the end of the string, or before \n at the end of the string. 
 
-\z	The match must occur at the end of the string only. 
+\z	the match must occur at the end of the string only. 
 
 \G	The match must start at the position where the previous match ended. 
 
-\b	The match must occur on a word boundary. 
+\b	the match must occur on a word boundary. 
 
 \B	The match must not occur on a word boundary.
 
@@ -48,7 +48,7 @@ $ (dollar sign): this is something that we would use in order to match the last 
 
     Quantifiers are used to help define instances or multiples of a search term that the user is trying to find. In the case that you are looking for single instances of a character or if a character is optional. You may want to include a quantifier to indicate exactly what you are looking for. 
 
-+ (Plus sign): match the string or more than one of the search terms.
++ (Plus, sign): match the string or more than one of the search terms.
     Example: /e+/g would find all of the e's in a string and if there are double e's anywhere in the string it will match all of them.
 
 ? (Question Mark): This would make a certain portion of the search term optional. 
@@ -76,27 +76,27 @@ $ (dollar sign): this is something that we would use in order to match the last 
 
 ### Grouping Constructs
 
-    Generally you can create lengths of expressions in order to find very specific matches. Your searchterms can become quite expansive. and so here are a couple of steps and examples of how you might go about this.
+    Generally, you can create lengths of expressions in order to find very specific matches. Your search terms can become quite expansive. and so here are a couple of steps and examples of how you might go about this.
 
-() (grouping parenthises): anything inside of the parentises are going to be in their own group and they only act upon themselves.
+() (grouping parentheses): anything inside of the parentheses are going to be in their own group and they only act upon themselves.
     Example: /(c|C)at/g would return all instances of the work Cat or cat within a string. If you used /c|Cat/g it would return any c or the work Cat.
 
 
-    Look aheads and look Behinds
+    Look ahead and look Behinds
     Look Behinds: (?<=) this expression is saying that we are looking for anything that is behind our search term and that it must be positive. Being positive means that it must match. 
-        Example: /(?<=[tT]he)./g would return the charater (spaces included) that follows the work 'The' Or 'the' in a string.
+        Example: /(?<=[tT]he)./g would return the character (spaces included) that follows the work 'The' Or 'the' in a string.
 
     You can make this negative by changing the '=' to a '!'. This would return a match for everything in the sentence that is not the character or space after the word 'the' or 'The' in the string.
 
     Look Ahead: This is very similar
 
 ### Bracket Expressions
-    [] (Square Brackets): These help to provide a ranges, it also helps you to specify particular characters that you might be looking for before or after a line of text.
+    [] (Square Brackets): These help to provide a range; it also helps you to specify particular characters that you might be looking for before or after a line of text.
     Example: /[fc]at/g would match for all of the 'fat' and 'cat' instances in a string. Or if you would like to match for any of the characters from A-Z you can do that. /[a-z]at/g would match every instance of a character followed by at so 'pat', 'bat', 'vat' would all be matched. /[a-zA-Z]at/ also works to identify all instances where lowercase or uppercase. You can also use shorter ranges (c-t, B-Q, whatever). You can also place meta characters like '.'
 
 ### Character Classes
 
-Generally this is stuff that appears between []
+Generally, this is stuff that appears between []
 
     You can place "abc" inside of [] and the machine would try to match an a, b, or c within a string. 
 
@@ -115,7 +115,7 @@ Generally this is stuff that appears between []
 
 ### The OR Operator
 
-(|) (grouping parenthises with a vertical pipe): anything inside of the parentises are going to be in their own group and they only act upon themselves.
+(|) (grouping parentheses with a vertical pipe): anything inside of the parentheses are going to be in their own group and they only act upon themselves.
     Example: /(c|C)at/g would return all instances of the work Cat or cat within a string. If you used /c|Cat/g it would return any c or the work Cat.
 
 ### Flags
@@ -125,19 +125,19 @@ g (Global): Looking for all instances of the text throughout the string. If we d
 i (Case Insensitive): It ignores the capitalization when trying to find matches.
 m (Multi Line): This enables you to look to multiple different lines of the string, to see if there are matches in different parts of the string.  
 
-u (unicode)
-y (sticky): this tries to match the lastIndex property. So if you have the following code 
+
+y (sticky): this tries to match the last Index property. So, if you have the following code 
 
     var reg = /t/y
         reg.lastIndex = 6
     "I went to the store earlier.".match(reg); It would return True. 
     
-    What happens here is that it is is trying to match a particular part starting at a particular character (defined by lastIndex). There are a few things to remember. After it returns true. It then increments. So since it returned true this last time it will increment to 7. If it ever returns null, it will go back to a value of 0. 
+    What happens here is that it is trying to match a particular part starting at a particular character (defined by lastIndex). There are a few things to remember. After it returns true. It then increments. So, since it returned true this last time it will increment to 7. If it ever returns null, it will go back to a value of 0. 
 
 
 ### Character Escapes
 
-\ (Backslash): you can use  the backslash to help escape using the Regex function of a character. For instance if you are looking to match a file type you might try /.txt/ but that may not work if there is something else other than a '.' in the name of the file. So using the back slash this way /\.txt/ removes the regex function associated with the '.' which of course would normally match whatever comes before the txt in this example.
+\ (Backslash): you can use  the backslash to help escape using the Regex function of a character. For instance, if you are looking to match a file type you might try /.txt/ but that may not work if there is something else other than a '.' in the name of the file. So, using the back slash this way /\.txt/ removes the regex function associated with the '.' which of course would normally match whatever comes before the txt in this example.
 
 
 ## Author
